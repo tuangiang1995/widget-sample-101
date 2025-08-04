@@ -16,7 +16,7 @@
         "advancedHeader": [
           {
             "comp": "rss-widget",
-            "script": "http://localhost:8000/build/rss-widget.js",
+            "script": "https://cdn.jsdelivr.net/gh/tuangiang1995/widget-sample-101/build/rss-widget.js",
             "properties": {
               "agent":           "$STORE.agent.agentName",          
               "dark":            "$STORE.app.darkMode",
