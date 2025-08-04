@@ -158,6 +158,8 @@
                     "cad": "$STORE.agentContact.taskMap",
                     "details": "$STORE.agentContact.taskMap",
                     "wrap": "$STORE.agent.wrapUpData",
+                    "state": "$STORE.agentContact.taskMap.Task.interaction.state",
+                    "virtualTeamName": "$STORE.agentContact.taskMap.Task.interaction.callProcessingDetails.virtualTeamName",
                     "token": "$STORE.auth.accessToken",
                     "avatar": "https://randomuser.me/api/portraits/med/lego/1.jpg",
                     "name": "Im a property from the JSON layout"

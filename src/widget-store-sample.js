@@ -51,6 +51,22 @@ export default class InfoCard extends HTMLElement {
         const { participants } = media[info];
         return participants;
       });
+
+      return response;
+    }
+  }
+
+
+  queueName() {
+    // pull out your specific objects
+    const info = this.cad;
+    for (const iterator of info) {
+      const media = iterator[1].interaction.media;
+      const response = Object.keys(media).map(info => {
+        const { participants } = media[info];
+        return participants;
+      });
+	  
       return response;
     }
   }
@@ -118,12 +134,12 @@ export default class InfoCard extends HTMLElement {
 						font-style: oblique;
 						text-decoration: underline #FF3028;
 					}
-		</style>
+			</style>
 					<div class="container">
 						<div class="cards">
 								<div class="card">
-									<button class="btn">Customer Phone</button>
-									<p class="hide"> ${this.ani} </p>
+									<button class="btn">Customer Phone with VirtualTeamName </button>
+									<p class="hide"> ${this.ani} | ${this.virtualTeamName} | ${this.state}</p>
 								</div>
 
 								<div class="card">
