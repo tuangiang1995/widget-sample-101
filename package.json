@@ -1,35 +1,28 @@
 {
-  "name": "webcomponent-sa-user-card",
+  "name": "rss-header-widget-sample",
+  "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "build": "webpack",
-    "dev": "node index.js"
-  },
-  "keywords": [],
+  "main": "src/rss-widget.js",
   "type": "module",
+  "scripts": {
+    "start": "npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "serve": "wds --watch",
+    "serve:cdn": "rollup -c --watch & web-dev-server --config web-dev-server.cdn.config.js"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.16.10",
-    "@babel/preset-env": "^7.16.11",
-    "@momentum-ui/core": "^19.15.16",
-    "babel-loader": "^8.2.3",
-    "css-loader": "^6.5.1",
-    "express": "^4.17.3",
-    "file-loader": "^6.2.0",
-    "image-webpack-loader": "^8.0.1",
-    "mini-css-extract-plugin": "^2.5.2",
-    "style-loader": "^3.3.1",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.66.0",
-    "webpack-cli": "^4.9.1"
-  },
   "dependencies": {
-    "@wxcc-desktop/sdk": "^1.2.9",
-    "bootstrap": "^5.3.6",
-    "http-cache-semantics": "^4.2.0",
-    "semver-regex": "^4.0.5"
+    "@shoelace-style/shoelace": "^2.20.1",
+    "lit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@web/dev-server": "^0.4.1",
+    "@web/dev-server-legacy": "^2.1.0",
+    "@webcomponents/webcomponentsjs": "^2.8.0",
+    "rollup": "^4.5.0"
   }
 }
