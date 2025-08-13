@@ -1,92 +1,30 @@
-# RSS Header Widget Sample
+# Header Widget Sample
 
-This is a sample project to demonstrate a custom RSS header widget built using LitElement for use as a Webex Contact Center Header Desktop Widget.
 
-![RSS Header Widget](./img/rss-header-widget.png)
+![Demo](img/beginnings-demo.gif)
 
-## Video Walkthrough
+**Last updated: Tuan Giang, 2025-08-12**
 
-Please watch this Vidcast for a tour of this sample application:
-https://app.vidcast.io/share/25fd0dbc-e3f4-49af-86a3-3c28ee788153
+This is a demo for Beginnings Credit Union (formerly known as CFCU). The demo demonstrate that once a customer places a message from a secure portal then the header widget will display to the agent that they are engaged in a secure chat. 
 
-## Installation
-
-To install the project, run the following command in your terminal:
+This project was forked from [RSS Header Widget Sample](https://github.com/WebexSamples/webex-contact-center-api-samples/tree/main/widget-samples/rss-header-widget-sample)
+**Note:** Cisco's documentation was off. Particularly the way with the way that they said to point to which build file. 
 
 ```shell
-npm install
+# Instead of this - 
+http://localhost:8000/rss-feed.js
+
+# It should have been this - 
+http://localhost:8000/build/rss-feed.js
 ```
 
-This will install all the dependencies listed in `package.json`.
+[Read more about Cisco's documentation](archive/README.MD)
 
-## Usage
+## Header widget high level 
 
-The main file is `src/rss-widget.js` which exports a custom LitElement component. This custom element is meant to be used as a header widget in Webex Contact Center.
+The backend is reading in the Datastore values of  `$STORE.agentContact.taskMap` mapped to `cad` in the `layout.json` and iterate through the local datastore for a specific queue **SECURE_CHAT_TG** (it reads and update every 3s). If it finds that the user is engaged in the **SECURE_CHAT_TG** then it will render the header widget. 
 
-## Integrating with Webex Contact Center
-
-This project can be integrated with Webex Contact Center to display the RSS feed widget on the agent's desktop.
-
-To achieve this, you need to use the [`layout.json`](./layout.json) file to define the desktop layout and run the project on a local server. 
-
-### Layout Configuration:
-
-The [`layout.json`](./layout.json) file defines the layout of the agent's desktop in Webex Contact Center. This file includes a reference to the RSS feed widget, specifying its position and size in the header.
-
-Here's the section of the `layout.json` file that includes the RSS feed widget:
-
-```json
-"advancedHeader": [
-    {
-    "comp": "rss-widget",
-    "script": "http://localhost:8000/rss-widget.js"
-    },
-    {
-    "comp": "agentx-webex"
-    },
-    {
-    "comp": "agentx-outdial"
-    },
-    {
-    "comp": "agentx-notification"
-    },
-    {
-    "comp": "agentx-state-selector"
-    }
-],
-```
-
-This configuration will display the RSS feed widget in a panel on the agent's desktop. The `url` property points to the location of the built JavaScript file for the widget.
-
-### Running the project on a local server:
-
-You can serve the built files and make them available via localhost by running:
-
-```shell
-npm run serve:cdn
-```
-
-This command will start Rollup in watch mode and @web/dev-server to serve your `build` directory. 
-
-When you start this command, the web component will be available at `http://localhost:8000/rss-feed.js` (or whatever port your server is running on). This URL can be used in the `layout.json` file to point to the RSS feed widget.
-
-Please note that Webex Contact Center may not be able to access localhost URLs. In a production environment, you should host your built files on a publicly accessible server or CDN.
-
-## Development
-
-This project uses Lit, Rollup, and @web/dev-server for development. 
-
-### Serving the project:
-
-To start the development server, run:
-
-```shell
-npm run serve
-```
-
-This will start @web/dev-server and watch your files for changes.
-
-### Building the project:
+## Serving the project:
 
 To build the project, run:
 
@@ -96,16 +34,12 @@ npm run build
 
 This command will generate a production-ready, IIFE standalone JavaScript file in the build directory using Rollup that can be used with Webex Contact Center.
 
-### Serving the built files:
-
-To serve the built files and enable live reloading, run:
+## Serving the built files:
 
 ```shell
-npm run serve:cdn
+npm start 
 ```
 
-This command will start Rollup in watch mode and @web/dev-server to serve your `build` directory.
+I found that once I uploaded the project to git repository then I could use this library https://aizhee.github.io/Github-to-jsDelivr-Generator/ to generate a public cdn link to render the header widget. Otherwise, if it is being built on a local machine then points it to the localhost address from the nodejs server start - e.g, `http://localhost:8000/build/rss-widget.js`
 
-## License
 
-This project is licensed under the ISC License.
