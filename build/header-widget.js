@@ -1,4 +1,4 @@
-var RssWidget = (function (exports) {
+var HeaderWidget = (function (exports) {
   'use strict';
 
   /**
@@ -546,8 +546,9 @@ var RssWidget = (function (exports) {
   // Set the base path (make sure this path is correct for your setup)
   setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/');
 
+  const SECURE_QUEUE_NAME = "SecureChat";
 
-  class RSSWidget extends i {
+  class HeaderWidget extends i {
     static get styles() {
       return i$3`
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -699,11 +700,11 @@ var RssWidget = (function (exports) {
       const info = this.cad;
       for (const iterator of info) {
         const callProcessingDetails = iterator[1].interaction.callProcessingDetails;
-        console.log("TUAN--", callProcessingDetails);
+        //console.log("TUAN--", callProcessingDetails)
         const response = Object.keys(callProcessingDetails).map(info => {
           return callProcessingDetails[info];
         });
-        console.log("TUAN[16] --", response[16]);
+        //console.log("TUAN[16] --", response[16]);
         return response[16];
       }
     }
@@ -712,7 +713,7 @@ var RssWidget = (function (exports) {
     render(){
       //const currentTime = new Date().toLocaleTimeString();
       //console.log(currentTime);
-      if (this.queue == "SECURE_CHAT_Q"){
+      if (this.queue == SECURE_QUEUE_NAME){
         return x`
         <div class="rss-widget ${this.dark && "dark"}">
           <div class="feed-items">
@@ -732,9 +733,9 @@ var RssWidget = (function (exports) {
         }
       }
   }
-  customElements.define('rss-widget', RSSWidget);
+  customElements.define('header-widget', HeaderWidget);
 
-  exports.RSSWidget = RSSWidget;
+  exports.HeaderWidget = HeaderWidget;
 
   return exports;
 
