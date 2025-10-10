@@ -1,11 +1,11 @@
 import {nodeResolve} from '@rollup/plugin-node-resolve';
 
 export default {
-  input: 'src/rss-widget.js', // the path to the component's JavaScript file
+  input: 'src/header-widget.js', // the path to the component's JavaScript file
   output: {
-    file: 'build/rss-widget.js', // the output file
+    file: 'build/header-widget.js', // the output file
     format: 'iife', // WxCC Requires iife format javascript
-    name: 'RssWidget'
+    name: 'HeaderWidget'
   },
   plugins: [
     nodeResolve() // tells Rollup how to find external modules

@@ -6,6 +6,7 @@ import '@shoelace-style/shoelace/dist/components/icon/icon.js';
 // Set the base path (make sure this path is correct for your setup)
 setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/');
 
+const SECURE_QUEUE_NAME = "SecureChat";
 
 export class RSSWidget extends LitElement {
   static get styles() {
@@ -172,7 +173,7 @@ export class RSSWidget extends LitElement {
   render(){
     //const currentTime = new Date().toLocaleTimeString();
     //console.log(currentTime);
-    if (this.queue == "SECURE_CHAT_Q"){
+    if (this.queue == SECURE_QUEUE_NAME){
       return html`
         <div class="rss-widget ${this.dark && "dark"}">
           <div class="feed-items">
