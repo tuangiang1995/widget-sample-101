@@ -8,7 +8,7 @@ setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/')
 
 const SECURE_QUEUE_NAME = "SecureChat";
 
-export class RSSWidget extends LitElement {
+export class HeaderWidget extends LitElement {
   static get styles() {
     return css`
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -160,11 +160,11 @@ export class RSSWidget extends LitElement {
     const info = this.cad;
     for (const iterator of info) {
       const callProcessingDetails = iterator[1].interaction.callProcessingDetails;
-      console.log("TUAN--", callProcessingDetails)
+      //console.log("TUAN--", callProcessingDetails)
       const response = Object.keys(callProcessingDetails).map(info => {
         return callProcessingDetails[info];
       });
-      console.log("TUAN[16] --", response[16]);
+      //console.log("TUAN[16] --", response[16]);
       return response[16];
     }
   }
@@ -193,4 +193,4 @@ export class RSSWidget extends LitElement {
       }
     }
 }
-customElements.define('rss-widget', RSSWidget);
+customElements.define('header-widget', HeaderWidget);
