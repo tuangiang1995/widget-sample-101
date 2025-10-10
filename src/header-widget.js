@@ -78,16 +78,10 @@ export class HeaderWidget extends LitElement {
 
   static get properties() {
     return {
-      rss: { attribute: "rss", type: String},
       currentItemIndex: { type: Number },
       items: { type: Array },
       dark: { attribute: "dark", type: Boolean },
-      agent: { attribute: "agent", type: String},
-      virtualTeamName: { attribute: "virtualTeamName", type: String},
-      QueueId: { attribute: "QueueId", type: String},
-      state: { attribute: "state", type: String},
       cad:   { attribute: "cad", type: Object},
-      currentTime: { type: String }, 
       queue: { type: String},
     }
   };
@@ -95,13 +89,8 @@ export class HeaderWidget extends LitElement {
   constructor() {
     super();
     this.dark = false;
-    this.rss  = 'https://developer.webex.com/api/content/blog/feed';
-    this.name = 'SECURE CHAT'
     this.items = [];
     this.currentItemIndex = 0;
-    this.feed = {};
-    this.agent = '';
-    this.QueueId = 'Test';
     this.queue   = "";
     this.cad     = Object; 
     this.state   = 'state';
