@@ -163,6 +163,7 @@ export class HeaderWidget extends LitElement {
     //const currentTime = new Date().toLocaleTimeString();
     //console.log(currentTime);
     if (this.queue == SECURE_QUEUE_NAME){
+      console.log("Rendering SECURE CHAT");
       return html`
         <div class="rss-widget ${this.dark && "dark"}">
           <div class="feed-items">
