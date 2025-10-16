@@ -558,7 +558,7 @@ var HeaderWidget = (function (exports) {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: 100px;
+        min-width: 80px;
         height: 55px;
         overflow: hidden;
         border: 1px solid #ccc;
