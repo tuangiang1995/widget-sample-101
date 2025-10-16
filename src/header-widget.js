@@ -18,8 +18,8 @@ export class HeaderWidget extends LitElement {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: 75px;
-        height: 60px;
+        min-width: 100px;
+        height: 55px;
         overflow: hidden;
         border: 1px solid #ccc;
         background-color: #290f87;
@@ -60,7 +60,7 @@ export class HeaderWidget extends LitElement {
 
       /* Dark mode styles */
       .rss-widget.dark {
-        background-color: black;
+        background-color: #F8A83A;
         color: white;
         --link-color: var(--link-color-dark);
       }
