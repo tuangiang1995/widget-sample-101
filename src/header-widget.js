@@ -61,8 +61,9 @@ export class HeaderWidget extends LitElement {
       /* Dark mode styles */
       .rss-widget.dark {
         background-color: #F8A83A;
-        color: white;
+        /* color: white; */
         --link-color: var(--link-color-dark);
+        color: var(--text-color, black);
       }
 
       a {
