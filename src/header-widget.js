@@ -63,7 +63,7 @@ export class HeaderWidget extends LitElement {
         background-color: #F8A83A;
         /* color: white; */
         --link-color: var(--link-color-dark);
-        color: var(--text-color, black);
+        color: black;
       }
 
       a {
